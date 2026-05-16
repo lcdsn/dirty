@@ -33,23 +33,13 @@
     {
       "id": 3,
       "name": "Distressed Bermuda",
-      "images": ["/img/9.jpeg", "/img/3.jpeg"],
+      "images": ["/img/9.jpeg"],
       "price": 80,
       "sizes": ["s", "m", "l", "xl"],
       "category": "bottoms",
       "gender": "men",
       "about": "Overdyed bermuda shorts with heavy distressing and contrast stitch repair. Pink acid wash with black patchwork panels. Relaxed fit."
-    },
-    {
-      "id": 4,
-      "name": "Dirty Lookbook Set",
-      "images": ["/img/10.jpeg", "/img/1.jpeg", "/img/9.jpeg"],
-      "price": 80,
-      "sizes": ["s", "m", "l"],
-      "category": "sets",
-      "gender": "sets",
-      "about": "The full dirty experience. Curated set from our debut collection featuring your choice of top and bottom pairing."
     }
   ],
-  "categories": ["tops", "bottoms", "sets"]
+  "categories": ["tops", "bottoms"]
 }

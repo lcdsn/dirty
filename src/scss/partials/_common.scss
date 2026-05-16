@@ -15,8 +15,6 @@
 }
 
 .catalog,
-.product,
-.cart,
 .not-found {
   animation: fade-in 0.4s ease-out;
 }
@@ -34,18 +32,10 @@
 
 .logo,
 .nav-list__link,
-.select__name,
-.select__item,
 .button,
 .button-tag,
-.button-square,
-.button-counter,
-.button-close,
-.catalog-item__link,
-.color:not(.color_disabled),
-.size:not(.size_disabled),
-.add,
-.cart-item__link {
+.catalog-item__arrow,
+.color:not(.color_disabled) {
   cursor: crosshair;
 }
 

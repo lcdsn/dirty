@@ -1,48 +1,49 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
-import { useCart } from '../context/CartContext';
 import { asset } from '../utils/asset';
 
-const SIZE_NAMES = ['xs', 's', 'm', 'l', 'xl'];
+function CatalogItem({ name, images }) {
+  const [imgIndex, setImgIndex] = useState(0);
 
-function CatalogItem({ id, name, images, price, sizes }) {
-  const { addToCart } = useCart();
-  const [activeSize, setActiveSize] = useState(sizes[0]);
+  const prev = (e) => {
+    e.stopPropagation();
+    setImgIndex((i) => (i - 1 + images.length) % images.length);
+  };
 
-  const handleAdd = (e) => {
-    e.preventDefault();
-    addToCart({ id, name, images, price }, activeSize);
+  const next = (e) => {
+    e.stopPropagation();
+    setImgIndex((i) => (i + 1) % images.length);
   };
 
   return (
     <li className="catalog-item catalog-list__catalog-item">
       <article className="catalog-item__inner">
-        <Link className="catalog-item__link" to={`/product/${id}`}>
-          {name}
-        </Link>
+        <img
+          className="catalog-item__img"
+          src={asset(images[imgIndex])}
+          alt={name}
+          loading="lazy"
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="catalog-item__arrow catalog-item__arrow_prev"
+              onClick={prev}
+              aria-label="Previous image"
+            >
+              &larr;
+            </button>
+            <button
+              type="button"
+              className="catalog-item__arrow catalog-item__arrow_next"
+              onClick={next}
+              aria-label="Next image"
+            >
+              &rarr;
+            </button>
+          </>
+        )}
         <h3 className="catalog-item__title">{name}</h3>
-        <div className="price catalog-item__price">R$ {price}</div>
-        <div className="catalog-item__overlay">
-          <ul className="sizes catalog-item__sizes">
-            {SIZE_NAMES.map((size) => (
-              <li
-                className={classNames('size', `size_${size}`, 'sizes__size', {
-                  size_active: activeSize === size,
-                  size_disabled: !sizes.includes(size),
-                })}
-                onClick={() => sizes.includes(size) && setActiveSize(size)}
-                key={size}
-              >
-                {size}
-              </li>
-            ))}
-          </ul>
-          <button className="add catalog-item__add" onClick={handleAdd}>
-            + add
-          </button>
-        </div>
-        <img className="catalog-item__img" src={asset(images[0])} alt={name} loading="lazy" />
       </article>
     </li>
   );
