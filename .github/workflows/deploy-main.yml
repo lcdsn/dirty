@@ -11,9 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+      
       - name: Deploy to S3
         run: |
-          aws s3 sync . s3://www.dirtycollective.com.br \
+          aws s3 sync ./dist s3://www.dirtycollective.com.br \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --delete
