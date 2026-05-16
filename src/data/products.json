@@ -18,7 +18,7 @@
       "sizes": ["s", "m", "l", "xl"],
       "category": "tops",
       "gender": "men",
-      "about": "Heavyweight cotton tee with hand-applied bleach splatter effect and OBSCN calligraphy print. Back features the signature cherry bomb logo. No two are alike."
+      "about": "Heavyweight cotton tee with hand-applied bleach splatter effect and dirty calligraphy print. Back features the signature cherry bomb logo. No two are alike."
     },
     {
       "id": 2,
@@ -42,13 +42,13 @@
     },
     {
       "id": 4,
-      "name": "OBSCN Lookbook Set",
+      "name": "Dirty Lookbook Set",
       "images": ["/img/10.jpeg", "/img/1.jpeg", "/img/9.jpeg"],
       "price": 80,
       "sizes": ["s", "m", "l"],
       "category": "sets",
       "gender": "sets",
-      "about": "The full OBSCN experience. Curated set from our debut collection featuring your choice of top and bottom pairing."
+      "about": "The full dirty experience. Curated set from our debut collection featuring your choice of top and bottom pairing."
     }
   ],
   "categories": ["tops", "bottoms", "sets"]
